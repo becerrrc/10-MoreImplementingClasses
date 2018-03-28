@@ -69,7 +69,7 @@ def main():
 #      -- If it is the first time this function has been called since Baby was created or fed
 # 	       -- Prints 'Baby <your baby's name> is sleeping.'
 #      -- If it is the second time this function has been called since baby was created or fed
-# 	       -- Prints 'Baby <your baby's name> is awake.  Time for food.'
+# 	       -- Prints 'Baby <your baby's name> is sleeping.'
 #      -- If it is the third (or more) time this function has been called since baby was created or fed
 # 	       -- Prints 'Baby <your baby's name> is CRYING uncontrollably!  Feed the Baby!'
 #
@@ -91,13 +91,23 @@ def main():
 ########################################################################
 class Baby(object):
 
-    def __init__(self, m, k):
+    def __init__(self, name):
+        self.name = name
+        self.h= 0
+        print('Hello baby {}!'.format(self.name))
 
-        self.m = m
-        self.k = k
+    def feed_baby(self):
+        self.h = 0
+        print('Thank you for feeding your baby {}!'.format(self.name))
 
-
-
+    def hour_passes(self):
+        self.h = self.h+1
+        if self.h == 1:
+            print('Baby {} is sleeping.'.format(self.name))
+        elif self.h == 2:
+            print('Baby {} is awake.  Time for food.'.format(self.name))
+        else:
+            print('Baby {} is CRYING uncontrollably!  Feed the Baby!'.format(self.name))
 
 
 
